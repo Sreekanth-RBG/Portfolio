@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Newsreader:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .skills-page-wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .skills-page-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        .skill-item {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--crimson-500);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: transform var(--transition-normal), border-color var(--transition-normal);
+        }
+        .skill-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-medium);
+            border-left-color: var(--crimson-600);
+        }
+        .skill-item h3 {
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+        }
+        .skill-item ul li {
+            margin-bottom: 0.35rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills-page-wrapper">
+        <header style="margin-bottom: 2.5rem; text-align: center;">
+            <h1 class="section-title">Welcome to My Portfolio</h1>
+            <p class="section-desc" style="margin: 0.75rem auto 0;">A quick overview of my skills and strengths</p>
+        </header>
+        
+        <div class="skills-page-card">
+            <section id="about-me" style="border: none; padding: 0; margin-bottom: 2.5rem;">
+                <h2 style="font-family: var(--font-heading); color: var(--crimson-500); font-size: 1.5rem; margin-bottom: 1rem;">About Me</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7;">Hello! I am passionate about continuously learning and improving my skills. Below, you'll find an overview of my core competencies, which include a combination of technical skills and soft skills that help me excel in my work.</p>
+            </section>
+            
+            <section id="skills" style="border: none; padding: 0;">
+                <h2 style="font-family: var(--font-heading); color: var(--crimson-500); font-size: 1.5rem; margin-bottom: 1.5rem;">My Skills</h2>
+                <div class="skill-item">
+                    <h3>Logical Thinking</h3>
+                    <p>I have a strong ability to analyze problems and find logical solutions, which helps me tackle complex issues efficiently.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Creative Mind</h3>
+                    <p>I approach tasks with creativity, which allows me to think outside the box and come up with unique and innovative solutions.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Programming Languages</h3>
+                    <p>I am proficient in several programming languages and technologies, including:</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <!-- Add more languages as needed -->
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Work Ethic</h3>
+                    <p>I am highly committed and hardworking, especially when working towards a specific goal. I put in my best effort to ensure that the work is completed to the highest standards.</p>
+                </div>
+            </section>
+            
+            <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+                <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">Thank you for visiting my webpage!</p>
+                <a href="index.html" class="btn btn-secondary btn-sm">&larr; Return to Portfolio</a>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

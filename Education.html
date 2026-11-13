@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Newsreader:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #F4EFE6;
+            --bg-card: #FFFFFF;
+            --bg-surface: #FAF7F2;
+            --text-primary: #1C1819;
+            --text-secondary: #3D3637;
+            --text-muted: #756C6A;
+            --crimson-500: #9E1B32;
+            --crimson-600: #851427;
+            --crimson-subtle: rgba(158, 27, 50, 0.06);
+            --border-subtle: #E6DCD0;
+            --border-medium: #D8CEBF;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.68;
+        }
+        header {
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        header h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+        }
+        section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 36px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(35, 27, 25, 0.05);
+        }
+        h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--crimson-500);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--crimson-500);
+            margin: 16px 0;
+            padding: 20px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        ul li:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-medium);
+            border-left-color: var(--crimson-600);
+        }
+        ul li h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-primary);
+            margin: 0 0 6px 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        ul li strong {
+            color: var(--text-primary);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--crimson-500);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            color: var(--crimson-600);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Education Journey</h1>
+    </header>
+    <section>
+        <h2>Education Details</h2>
+        <ul>
+            <li>
+                <h3>Schooling</h3>
+                <p>Completed up to 10th standard at <strong>Keshavareddy Concept School</strong>.</p>
+            </li>
+            <li>
+                <h3>Intermediate (10+2)</h3>
+                <p>Completed up to 10+2 at <strong>Race Junior College</strong>.</p>
+            </li>
+            <li>
+                <h3>Current Education</h3>
+                <p>Currently in <strong>Third Year</strong>, pursuing <strong>B.Tech in Cyber Security and Blockchain</strong> at <strong>Lovely Professional University</strong> (CGPA <strong>7.62</strong>).</p>
+            </li>
+        </ul>
+        <a href="index.html" class="back-link">&larr; Return to Portfolio</a>
+    </section>
+</body>
+</html>

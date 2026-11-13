@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Newsreader:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #F4EFE6;
+            --bg-card: #FFFFFF;
+            --bg-surface: #FAF7F2;
+            --text-primary: #1C1819;
+            --text-secondary: #3D3637;
+            --text-muted: #756C6A;
+            --crimson-500: #9E1B32;
+            --crimson-600: #851427;
+            --crimson-subtle: rgba(158, 27, 50, 0.06);
+            --border-subtle: #E6DCD0;
+            --border-medium: #D8CEBF;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            line-height: 1.68;
+        }
+        .container {
+            width: 90%;
+            max-width: 680px;
+            margin: 60px auto;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(35, 27, 25, 0.06);
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+        }
+        p {
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        input, textarea, button {
+            font-family: inherit;
+            font-size: 0.95rem;
+            padding: 12px 14px;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--crimson-500);
+            box-shadow: 0 0 0 3px var(--crimson-subtle);
+            background: #FFFFFF;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        button {
+            background: var(--crimson-500);
+            color: white;
+            border: 1px solid var(--crimson-500);
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 10px;
+            padding: 14px;
+        }
+        button:hover {
+            background: var(--crimson-600);
+            border-color: var(--crimson-600);
+            box-shadow: 0 6px 16px rgba(158, 27, 50, 0.2);
+            transform: translateY(-2px);
+        }
+        .socials {
+            text-align: center;
+            margin-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 24px;
+        }
+        .socials p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .socials a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: var(--crimson-500);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .socials a:hover {
+            color: var(--crimson-600);
+            text-decoration: underline;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        .back-link:hover {
+            color: var(--crimson-500);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>If you have any questions, opportunities, or just want to say hello, feel free to reach out!</p>
+        <form action="#" method="POST">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="socials">
+            <p>Connect with me on:</p>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+        <a href="index.html" class="back-link">&larr; Return to Portfolio</a>
+    </div>
+</body>
+</html>

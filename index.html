@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sreekanth Reddy Vennapusa — Third-year B.Tech Computer Science & Engineering student at Lovely Professional University. Specializing in cybersecurity, systems architecture, and software engineering.">
+  <meta name="keywords" content="Sreekanth Reddy Vennapusa, Computer Science, Portfolio, Cybersecurity, C++, Python, LPU, Network+, Oracle Certified, Software Engineer">
+  <meta name="author" content="Sreekanth Reddy Vennapusa">
+  
+  <title>Sreekanth Reddy Vennapusa | Software Engineer & Systems Specialist</title>
+
+  <!-- Typography: Sacramento, Newsreader, Plus Jakarta Sans, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Red Dot Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- Interactive Three.js 3D Background Keycap Grid (Spanning Whole Website) -->
+  <canvas id="siteBgCanvas" class="site-bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Glassmorphic Pill Header & Navigation (yashahire style) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Sreekanth Reddy Vennapusa Home">
+        <span class="brand-badge">SR</span>
+        <span class="brand-text">Sreekanth Reddy</span>
+      </a>
+
+      <!-- Centered Floating Pill Navigation -->
+      <nav class="nav-pill-container" id="navLinks" aria-label="Main Navigation">
+        <a href="#hero" class="nav-pill-link active">Home</a>
+        <a href="#about" class="nav-pill-link">About</a>
+        <a href="#experience" class="nav-pill-link">Experience</a>
+        <a href="#projects" class="nav-pill-link">Projects</a>
+        <a href="#skills" class="nav-pill-link">Skills</a>
+        <a href="#education" class="nav-pill-link">Education</a>
+        <a href="#contact" class="nav-pill-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Quick Resume Modal Trigger -->
+        <button class="header-resume-btn" id="headerResumeBtn" aria-label="Preview and download official resume" title="Preview Resume / CV">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle color theme" title="Toggle Theme">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+
+        <!-- Get In Touch Button -->
+        <a href="#contact" class="btn btn-primary btn-sm btn-header-cta">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Get in touch</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero (Interactive yashahire style with Spotlight & Carousel) -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Left: Dynamic Terminal Greeting, Bold Typography & Interactive AI Capsule -->
+        <div class="hero-content">
+          <!-- Live Terminal Typing Prompt -->
+          <div class="terminal-greeting hero-stagger-1">
+            <span class="terminal-arrow">&gt;</span>
+            <span class="terminal-cmd" id="terminalTypewriter">Npm start | ,I am</span>
+            <span class="terminal-blink">_</span>
+          </div>
+
+          <!-- Bold Typography Headline with Sacramento Cursive Script Accent -->
+          <div class="hero-title-group hero-stagger-2">
+            <h1 class="hero-name">Sreekanth Reddy<span class="crimson-dot">.</span></h1>
+            <div class="hero-cursive-accent">Systems &amp; Security Engineer</div>
+          </div>
+
+          <!-- Narrative Bio with Highlighted Keyword Pills -->
+          <p class="hero-bio hero-stagger-3">
+            I'm Sreekanth, a <span class="text-pill">Third-year B.Tech CSE student</span> at <strong>Lovely Professional University</strong> (CGPA <strong>7.62</strong>). Specializing in <span class="text-pill">Cybersecurity</span>, low-level <span class="text-pill">Systems Engineering</span>, and scalable software solutions. Ranked <span class="text-pill crimson">Top 15% Globally</span> on TryHackMe.
+          </p>
+
+          <!-- Interactive Action Row: Resume + "Ask me anything" Glowing Capsule with Pixel Mascot -->
+          <div class="hero-actions-capsule hero-stagger-4">
+            <button class="btn-pill-resume" id="resumeBtn" aria-label="Preview and download official resume">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>Resume / CV</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+
+            <!-- Glowing Interactive AI Assistant Pill with Mascot -->
+            <div class="ai-capsule-wrapper">
+              <button class="btn-capsule-ai" id="askMeAnythingBtn" aria-label="Open Interactive AI Assistant">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Ask me <strong class="crimson-highlight">anything</strong></span>
+                <i class="fa-solid fa-arrow-right capsule-arrow"></i>
+              </button>
+              <div class="mascot-dog" id="mascotDog" title="Click me to chat with Sreekanth's AI!">
+                <div class="dog-bubble">Woof! Ask me!</div>
+                <span class="dog-emoji">🐕</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Strip -->
+          <div class="hero-metrics hero-stagger-5">
+            <div class="metric-item">
+              <span class="metric-value">7.62</span>
+              <span class="metric-label">B.Tech CGPA (LPU)</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">3</span>
+              <span class="metric-label">Core Projects</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">13</span>
+              <span class="metric-label">Certifications</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value highlight">Top 15%</span>
+              <span class="metric-label">TryHackMe Global</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Spotlight "Currently Building" Card & Endorsement Carousel -->
+        <div class="hero-spotlight-stack hero-stagger-6">
+          <!-- Spotlight Card 1: Currently Building (MECSEC) -->
+          <div class="spotlight-card">
+            <div class="spotlight-top">
+              <span class="spotlight-tag">CURRENTLY BUILDING</span>
+              <a href="#projects" class="spotlight-external-link" title="Inspect MECSEC Project">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="spotlight-title">MECSEC_</h3>
+            <p class="spotlight-desc">
+              GPS-enabled AutoTech SaaS marketplace streamlining fragmented automotive repairs with blockchain maintenance logging and verified workshop telemetry.
+            </p>
+            <div class="spotlight-tech-pills">
+              <span class="pill active">React</span>
+              <span class="pill active">TypeScript</span>
+              <span class="pill active">Node.js</span>
+              <span class="pill">Blockchain</span>
+              <span class="pill">Google Maps API</span>
+            </div>
+          </div>
+
+          <!-- Spotlight Card 2: Interactive Endorsement & Credential Carousel -->
+          <div class="endorsement-card" id="endorsementCard">
+            <div class="endorsement-header">
+              <div class="endorsement-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>VERIFIED CREDENTIAL</span>
+              </div>
+              <div class="endorsement-controls">
+                <button class="endorse-nav-btn" id="endorsePrevBtn" aria-label="Previous endorsement"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="endorse-nav-btn" id="endorseNextBtn" aria-label="Next endorsement"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+
+            <div class="endorsement-slider" id="endorsementSlider">
+              <!-- Slide 1 -->
+              <div class="endorse-slide active" data-slide="0">
+                <p class="endorse-quote">
+                  "Earned the globally recognized CompTIA Network+ certification, demonstrating rigorous comprehension of enterprise network topologies, routing protocols, and perimeter defense."
+                </p>
+                <div class="endorse-author">
+                  <div class="endorse-avatar"><i class="fa-solid fa-network-wired"></i></div>
+                  <div>
+                    <strong>CompTIA Network+</strong>
+                    <span>Professional Credential • Aug 2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="endorse-slide" data-slide="1">
+                <p class="endorse-quote">
+                  "Ranked in the Top 15% of learners worldwide on TryHackMe, actively participating in defensive cybersecurity labs, CTF challenges, and vulnerability assessment exercises."
+                </p>
+                <div class="endorse-author">
+                  <div class="endorse-avatar crimson"><i class="fa-solid fa-user-ninja"></i></div>
+                  <div>
+                    <strong>Top 15% Global Rank</strong>
+                    <span>TryHackMe Cybersecurity Platform</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="endorse-slide" data-slide="2">
+                <p class="endorse-quote">
+                  "Oracle Certified Associate validating core competence in autonomous agentic AI architectures and relational/vector database query optimization."
+                </p>
+                <div class="endorse-author">
+                  <div class="endorse-avatar"><i class="fa-solid fa-brain"></i></div>
+                  <div>
+                    <strong>Oracle University</strong>
+                    <span>AI &amp; Database Foundations Associate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Pagination Dots -->
+            <div class="carousel-dots" id="endorseDots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: About Me (Centerpiece Card with Circular Avatar) -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-pill-tag">About Me</span>
+          <h2 class="section-title">Analytical Mindset Grounded in Systems &amp; Security</h2>
+          <p class="section-desc">
+            Bridging theoretical computer science principles with pragmatic software delivery.
+          </p>
+        </div>
+
+        <div class="about-hero-card">
+          <!-- Left: Circular Avatar Badge using main.jpg -->
+          <div class="about-avatar-container">
+            <div class="avatar-halo-ring">
+              <img src="main.jpg" alt="Sreekanth Reddy Vennapusa" class="about-portrait-img">
+            </div>
+            <div class="avatar-status-badge">
+              <span class="status-dot"></span>
+              <span>Available for Placements</span>
+            </div>
+          </div>
+
+          <!-- Right: Narrative Bio & Mindset -->
+          <div class="about-text-content">
+            <p>
+              I am a third-year <strong>Computer Science and Engineering</strong> student at <strong>Lovely Professional University</strong> with a cumulative <strong>CGPA of 7.62</strong>. My academic trajectory and personal engineering projects are directed toward <strong>cybersecurity, low-level systems behavior, and end-to-end product thinking</strong>.
+            </p>
+            <p>
+              Rather than viewing technology merely through isolated frameworks, I prioritize understanding the underlying machinery—how operating systems allocate CPU resources in real-time, how network packets route through adversarial environments, and how data structures dictate algorithm latency.
+            </p>
+            <p>
+              Through practical internships, competitive hackathons, and rigorous certifications from industry leaders including <strong>CompTIA</strong> and <strong>Oracle</strong>, I have cultivated an adaptable engineering discipline. I approach new technical domains with structured problem-solving, clean code hygiene, and a commitment to delivering dependable software.
+            </p>
+
+            <!-- Inline Highlight Badges -->
+            <div class="about-pills-row">
+              <span class="about-spec-pill"><i class="fa-solid fa-shield-virus"></i> Cybersecurity &amp; Forensics</span>
+              <span class="about-spec-pill"><i class="fa-solid fa-microchip"></i> Systems &amp; Algorithmic Efficiency</span>
+              <span class="about-spec-pill"><i class="fa-solid fa-layer-group"></i> Full-Stack SaaS &amp; APIs</span>
+            </div>
+
+            <!-- Direct Social CTAs -->
+            <div class="about-actions-row">
+              <a href="https://www.linkedin.com/in/sreekanth-reddy-vennapusa" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <button class="btn btn-secondary btn-sm btn-copy" data-copy-target="vsreekanthreddy1818@gmail.com">
+                <i class="fa-regular fa-clone"></i>
+                <span>Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Experience (Swipeable Journey Cards with Expanders) -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-pill-tag">Experience</span>
+          <h2 class="section-title">Industry Internship &amp; Social Outreach</h2>
+          <p class="section-desc">Swipe through my professional journey</p>
+        </div>
+
+        <div class="experience-deck">
+          <!-- Experience Card 1: WNS Cares Foundation -->
+          <div class="exp-card">
+            <div class="exp-card-header">
+              <div class="exp-icon-box">
+                <i class="fa-solid fa-building-shield"></i>
+              </div>
+              <div class="exp-title-group">
+                <h3 class="exp-role">CSR Project Intern — "CyberSmart Awareness"</h3>
+                <span class="exp-org">WNS Cares Foundation (CSR arm of WNS Global Services)</span>
+              </div>
+              <span class="exp-badge">Internship</span>
+            </div>
+
+            <div class="exp-meta-row">
+              <span><i class="fa-regular fa-calendar-check"></i> Jul 2025 – Aug 2025</span>
+              <span><i class="fa-solid fa-location-dot"></i> India • Hybrid Outreach</span>
+            </div>
+
+            <p class="exp-summary">
+              Completed a structured CSR project internship focused on cybersecurity awareness outreach under the direct guidance and mentorship of the WNS Cares Foundation (WCF) team.
+            </p>
+
+            <!-- In-Card Expandable Details (yashahire + interaction) -->
+            <div class="exp-expanded-content" id="expDetail1">
+              <ul class="exp-bullets">
+                <li>Applied presentation, tutoring, and community outreach skills to spread crucial cyber-safety and digital hygiene awareness among targeted student and community groups.</li>
+                <li>Managed networking and relationship-building efforts across cross-functional volunteers, receiving an excellent performance evaluation upon conclusion of the initiative.</li>
+                <li>Conducted interactive demonstrations highlighting social engineering vectors, phishing hygiene, and strong credential management.</li>
+              </ul>
+            </div>
+
+            <button class="exp-expand-btn" data-target="expDetail1" aria-label="Expand details">
+              <i class="fa-solid fa-plus"></i>
+              <span>Details</span>
+            </button>
+          </div>
+
+          <!-- Experience Card 2: Faculty-Guided LPU Summer Training -->
+          <div class="exp-card">
+            <div class="exp-card-header">
+              <div class="exp-icon-box crimson">
+                <i class="fa-solid fa-user-secret"></i>
+              </div>
+              <div class="exp-title-group">
+                <h3 class="exp-role">Cybersecurity Research &amp; Forensics Developer</h3>
+                <span class="exp-org">Lovely Professional University (Faculty-Guided Training)</span>
+              </div>
+              <span class="exp-badge">Specialized Training</span>
+            </div>
+
+            <div class="exp-meta-row">
+              <span><i class="fa-regular fa-calendar-check"></i> Aug 2025</span>
+              <span><i class="fa-solid fa-location-dot"></i> Punjab, India</span>
+            </div>
+
+            <p class="exp-summary">
+              Engineered Sentinel.eml, an end-to-end analytical utility parsing RFC-822 email headers to detect spoofing, relay anomalies, and weaponized credential harvesting infrastructure.
+            </p>
+
+            <div class="exp-expanded-content" id="expDetail2">
+              <ul class="exp-bullets">
+                <li>Integrated AbuseIPDB intelligence feeds and dynamic DNS queries to automatically validate SPF alignment, DKIM cryptographic signatures, and DMARC enforcement policies.</li>
+                <li>Developed automated threat classification algorithms scoring header risk indicators with sub-second latency.</li>
+                <li>Validated detection accuracy against known spam and spear-phishing telemetry sets.</li>
+              </ul>
+            </div>
+
+            <button class="exp-expand-btn" data-target="expDetail2" aria-label="Expand details">
+              <i class="fa-solid fa-plus"></i>
+              <span>Details</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Projects ("Things I've Built" - Interactive Card Deck with In-Card Expander) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-pill-tag">Things I've Built</span>
+          <h2 class="section-title">Featured Work &amp; Side Projects</h2>
+          <p class="section-desc">Click '+' on any card to flip open its technical architecture, problem statement, and impact.</p>
+        </div>
+
+        <!-- Project Carousel / Deck -->
+        <div class="projects-deck-wrapper">
+          <div class="projects-deck" id="projectsDeck">
+            <!-- Project 1: MECSEC -->
+            <div class="deck-card" data-project="mecsec">
+              <div class="deck-card-front">
+                <div class="deck-top">
+                  <span class="deck-category">AUTOTECH SAAS MARKETPLACE</span>
+                  <div class="deck-actions">
+                    <button class="deck-flip-btn" data-project-flip="mecsec" aria-label="Expand MECSEC technical details" title="Expand Technical Deep-Dive">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="deck-icon-btn" title="View Source on GitHub">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="deck-title">MECSEC</h3>
+                <div class="deck-cursive">GPS-Enabled AutoTech SaaS Marketplace</div>
+
+                <p class="deck-desc">
+                  Unified, transparent automotive aftermarket platform addressing fragmented service discovery with GPS mapping, verified workshops, and blockchain maintenance logging.
+                </p>
+
+                <div class="deck-tech-row">
+                  <span class="pill active">React</span>
+                  <span class="pill active">TypeScript</span>
+                  <span class="pill">Tailwind CSS</span>
+                  <span class="pill">Node.js</span>
+                  <span class="pill">Google Maps API</span>
+                  <span class="pill">Blockchain</span>
+                </div>
+
+                <div class="deck-footer-action">
+                  <button class="btn-inspect-link" data-project-trigger="mecsec">
+                    <span>Inspect Full Architecture Modal</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- In-Card Expandable Deep-Dive Panel -->
+              <div class="deck-card-back" id="deckBack-mecsec">
+                <div class="deck-back-header">
+                  <span class="deck-category">MECSEC ARCHITECTURE SPEC</span>
+                  <button class="deck-close-btn" data-project-close="mecsec" aria-label="Close details">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <div class="deck-back-body">
+                  <h4><i class="fa-solid fa-circle-exclamation"></i> Problem Statement</h4>
+                  <p>Fragmented, unorganized vehicle servicing aftermarket with opaque pricing, untraceable maintenance histories, and inconsistent roadside assistance.</p>
+                  <h4><i class="fa-solid fa-code-fork"></i> Architecture</h4>
+                  <p>Engineered responsive client architecture integrating Google Maps Places API for precision workshop discovery, distributed backend APIs, and blockchain ledger components for tamper-evident service logging.</p>
+                  <div class="deck-back-actions">
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                      <i class="fa-brands fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <button class="btn btn-secondary btn-sm" data-project-trigger="mecsec">Full Modal</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Sentinel.eml -->
+            <div class="deck-card" data-project="sentinel">
+              <div class="deck-card-front">
+                <div class="deck-top">
+                  <span class="deck-category">CYBERSECURITY FORENSICS</span>
+                  <div class="deck-actions">
+                    <button class="deck-flip-btn" data-project-flip="sentinel" aria-label="Expand Sentinel technical details" title="Expand Technical Deep-Dive">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="deck-icon-btn" title="View Source on GitHub">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="deck-title">Sentinel.eml</h3>
+                <div class="deck-cursive">Phishing &amp; Email Header Forensic Tool</div>
+
+                <p class="deck-desc">
+                  Defensive security utility automating RFC-822 email header extraction, IP routing hop analysis, AbuseIPDB threat feeds, and SPF/DKIM/DMARC validation.
+                </p>
+
+                <div class="deck-tech-row">
+                  <span class="pill active">Python</span>
+                  <span class="pill active">Flask/FastAPI</span>
+                  <span class="pill">AbuseIPDB</span>
+                  <span class="pill">dnspython</span>
+                  <span class="pill">SPF / DKIM / DMARC</span>
+                </div>
+
+                <div class="deck-footer-action">
+                  <button class="btn-inspect-link" data-project-trigger="sentinel">
+                    <span>Inspect Full Architecture Modal</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- In-Card Expandable Deep-Dive Panel -->
+              <div class="deck-card-back" id="deckBack-sentinel">
+                <div class="deck-back-header">
+                  <span class="deck-category">SENTINEL FORENSIC SPEC</span>
+                  <button class="deck-close-btn" data-project-close="sentinel" aria-label="Close details">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <div class="deck-back-body">
+                  <h4><i class="fa-solid fa-circle-exclamation"></i> Problem Statement</h4>
+                  <p>Difficulty and latency in manually decomposing raw email RFC-822 headers to identify sophisticated email spoofing, relay hops, and credential harvesting threats.</p>
+                  <h4><i class="fa-solid fa-shield-halved"></i> Real-World Impact</h4>
+                  <p>Empowers security teams and end-users to authenticate sender legitimacy, instantly expose forged headers, and flag malicious infrastructure via an intuitive risk-scored breakdown.</p>
+                  <div class="deck-back-actions">
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                      <i class="fa-brands fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <button class="btn btn-secondary btn-sm" data-project-trigger="sentinel">Full Modal</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: NEXUS-7 -->
+            <div class="deck-card" data-project="nexus7">
+              <div class="deck-card-front">
+                <div class="deck-top">
+                  <span class="deck-category">SYSTEMS &amp; OS SIMULATION</span>
+                  <div class="deck-actions">
+                    <button class="deck-flip-btn" data-project-flip="nexus7" aria-label="Expand NEXUS-7 technical details" title="Expand Technical Deep-Dive">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="deck-icon-btn" title="View Source on GitHub">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="deck-title">NEXUS-7</h3>
+                <div class="deck-cursive">Real-Time Resource Allocation System</div>
+
+                <p class="deck-desc">
+                  Operating system simulator bridging theoretical scheduling algorithms (Round Robin, SJF, Priority, MLFQ) with dynamic runtime CPU execution and live WebSocket telemetry.
+                </p>
+
+                <div class="deck-tech-row">
+                  <span class="pill active">C++</span>
+                  <span class="pill active">Scheduling Algorithms</span>
+                  <span class="pill">WebSocket Streaming</span>
+                  <span class="pill">Node.js</span>
+                  <span class="pill">Gantt Metrics</span>
+                </div>
+
+                <div class="deck-footer-action">
+                  <button class="btn-inspect-link" data-project-trigger="nexus7">
+                    <span>Inspect Full Architecture Modal</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- In-Card Expandable Deep-Dive Panel -->
+              <div class="deck-card-back" id="deckBack-nexus7">
+                <div class="deck-back-header">
+                  <span class="deck-category">NEXUS-7 SIMULATION SPEC</span>
+                  <button class="deck-close-btn" data-project-close="nexus7" aria-label="Close details">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <div class="deck-back-body">
+                  <h4><i class="fa-solid fa-circle-exclamation"></i> Problem Statement</h4>
+                  <p>Pedagogical and diagnostic gap between static textbook scheduling algorithms and actual dynamic operating system CPU execution and resource contention.</p>
+                  <h4><i class="fa-solid fa-microchip"></i> Engineering Highlights</h4>
+                  <p>Implemented deterministic scheduling simulations in algorithmic C++ modules, tracking turnaround times and context switch penalties streamed live through WebSockets.</p>
+                  <div class="deck-back-actions">
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                      <i class="fa-brands fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <button class="btn btn-secondary btn-sm" data-project-trigger="nexus7">Full Modal</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Skills & Certifications ("Tech Stack" yashahire style layout) -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="skills-cert-split-grid">
+          <!-- Left: Tech Stack with Category Rows -->
+          <div class="tech-stack-column">
+            <div class="section-left-header">
+              <span class="section-pill-tag">Skills</span>
+              <h2 class="section-title">Tech Stack</h2>
+            </div>
+
+            <div class="tech-stack-rows">
+              <!-- Row 1: Languages -->
+              <div class="tech-row">
+                <div class="tech-row-label">LANGUAGES</div>
+                <div class="tech-row-pills">
+                  <span class="stack-badge"><i class="fa-solid fa-terminal"></i> C++</span>
+                  <span class="stack-badge"><i class="fa-brands fa-python"></i> Python</span>
+                  <span class="stack-badge"><i class="fa-solid fa-c"></i> C</span>
+                  <span class="stack-badge"><i class="fa-solid fa-diagram-project"></i> DSA</span>
+                </div>
+              </div>
+
+              <!-- Row 2: Frameworks & Frontend -->
+              <div class="tech-row">
+                <div class="tech-row-label">FRAMEWORKS</div>
+                <div class="tech-row-pills">
+                  <span class="stack-badge"><i class="fa-brands fa-react"></i> React</span>
+                  <span class="stack-badge"><i class="fa-brands fa-html5"></i> HTML</span>
+                  <span class="stack-badge"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                  <span class="stack-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                </div>
+              </div>
+
+              <!-- Row 3: Databases & Tools -->
+              <div class="tech-row">
+                <div class="tech-row-label">CLOUD &amp; DB</div>
+                <div class="tech-row-pills">
+                  <span class="stack-badge"><i class="fa-solid fa-database"></i> MySQL</span>
+                  <span class="stack-badge"><i class="fa-solid fa-table"></i> DBMS</span>
+                  <span class="stack-badge"><i class="fa-solid fa-cloud"></i> Oracle Cloud</span>
+                </div>
+              </div>
+
+              <!-- Row 4: Security & Systems -->
+              <div class="tech-row">
+                <div class="tech-row-label">SECURITY &amp; OS</div>
+                <div class="tech-row-pills">
+                  <span class="stack-badge"><i class="fa-solid fa-shield-halved"></i> CompTIA Network+</span>
+                  <span class="stack-badge"><i class="fa-solid fa-envelope-circle-check"></i> SPF/DKIM/DMARC</span>
+                  <span class="stack-badge"><i class="fa-brands fa-linux"></i> Linux/Bash</span>
+                  <span class="stack-badge"><i class="fa-solid fa-user-ninja"></i> TryHackMe Top 15%</span>
+                </div>
+              </div>
+
+              <!-- Row 5: Professional Mindset -->
+              <div class="tech-row">
+                <div class="tech-row-label">MINDSET</div>
+                <div class="tech-row-pills">
+                  <span class="stack-badge"><i class="fa-solid fa-brain"></i> Problem-Solving</span>
+                  <span class="stack-badge"><i class="fa-solid fa-arrows-split-up-and-left"></i> Adaptability</span>
+                  <span class="stack-badge"><i class="fa-solid fa-users"></i> Cross-Functional Collaboration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Top Industry Certifications & Credentials -->
+          <div class="cert-priority-column" id="certifications">
+            <div class="section-left-header">
+              <span class="section-pill-tag">Credentials</span>
+              <h2 class="section-title">Industry Certifications</h2>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="cert-filter-pills" role="tablist">
+              <button class="filter-btn active" data-cert-filter="all">All (13)</button>
+              <button class="filter-btn" data-cert-filter="security">Security</button>
+              <button class="filter-btn" data-cert-filter="ai">AI &amp; Cloud</button>
+              <button class="filter-btn" data-cert-filter="systems">Systems</button>
+            </div>
+
+            <!-- Populated dynamically via app.js -->
+            <div class="certs-compact-grid" id="certsContainer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Education (yashahire styled Academic Showcase Cards) -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-pill-tag">Education</span>
+          <h2 class="section-title">Academic Background</h2>
+          <p class="section-desc">Consistent academic record across undergraduate engineering and higher secondary education.</p>
+        </div>
+
+        <div class="education-cards-grid">
+          <!-- Card 1: Lovely Professional University -->
+          <div class="edu-showcase-card">
+            <div class="edu-card-top">
+              <span class="edu-period-badge">Since Aug 2024 – Present</span>
+              <span class="edu-grade-pill">CGPA: 7.62</span>
+            </div>
+            <h3 class="edu-degree">B.Tech in Computer Science and Engineering</h3>
+            <div class="edu-institution">Lovely Professional University • Punjab, India</div>
+            <p class="edu-detail">
+              Third-year undergraduate specialization focusing on cybersecurity, systems programming, and algorithms. Actively engaged in hands-on CTFs and developer hackathons.
+            </p>
+          </div>
+
+          <!-- Card 2: Race Junior College -->
+          <div class="edu-showcase-card">
+            <div class="edu-card-top">
+              <span class="edu-period-badge">Jun 2022 – Apr 2024</span>
+              <span class="edu-grade-pill">Score: 90.50%</span>
+            </div>
+            <h3 class="edu-degree">Intermediate (12th Grade / Senior Secondary)</h3>
+            <div class="edu-institution">Race Junior College • Kurnool, Andhra Pradesh</div>
+            <p class="edu-detail">
+              Comprehensive mathematics, physics, and chemistry foundational coursework, graduating with high distinction.
+            </p>
+          </div>
+
+          <!-- Card 3: Keshava Reddy Concept School -->
+          <div class="edu-showcase-card">
+            <div class="edu-card-top">
+              <span class="edu-period-badge">Jun 2021 – May 2022</span>
+              <span class="edu-grade-pill">Score: 92.83%</span>
+            </div>
+            <h3 class="edu-degree">Matriculation (10th Grade / Secondary School)</h3>
+            <div class="edu-institution">Keshava Reddy Concept School • Ananthapur, Andhra Pradesh</div>
+            <p class="edu-detail">
+              Secondary education with exceptional academic scoring and participation in science and mathematical problem-solving competitions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Contact ("Get In Touch" with Spotify Widget & Realistic Sticky Notepad) -->
+    <section class="section" id="contact" style="border-bottom:none;">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-pill-tag">Get In Touch</span>
+          <h2 class="section-title">Open to Roles, Collabs, or a Good Conversation</h2>
+          <p class="section-desc">Reach out for technical interviews, placement assessments, or engineering discussions.</p>
+        </div>
+
+        <div class="contact-yash-grid">
+          <!-- Left: Direct Channels Dossier & Philosophy Quote Card -->
+          <div class="contact-left-col">
+            <!-- Authentic Direct Contact Card -->
+            <div class="contact-dossier-card">
+              <div class="contact-dossier-header">
+                <span class="contact-dossier-label">DIRECT CHANNELS</span>
+                <span class="contact-status-available"><span class="status-pulse-dot"></span> Available for Roles</span>
+              </div>
+              
+              <div class="contact-channels-list">
+                <div class="contact-channel-item">
+                  <div class="channel-icon-box"><i class="fa-regular fa-envelope"></i></div>
+                  <div class="channel-content">
+                    <span class="channel-label">Email Address</span>
+                    <div class="channel-value-row">
+                      <a href="mailto:vsreekanthreddy1818@gmail.com" class="channel-link">vsreekanthreddy1818@gmail.com</a>
+                      <button class="btn-copy-chip" data-copy="vsreekanthreddy1818@gmail.com" title="Copy Email">
+                        <i class="fa-regular fa-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-channel-item">
+                  <div class="channel-icon-box"><i class="fa-solid fa-phone"></i></div>
+                  <div class="channel-content">
+                    <span class="channel-label">Phone / WhatsApp</span>
+                    <div class="channel-value-row">
+                      <a href="tel:+916305598886" class="channel-link">+91 6305598886</a>
+                      <button class="btn-copy-chip" data-copy="+916305598886" title="Copy Phone Number">
+                        <i class="fa-regular fa-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-channel-item">
+                  <div class="channel-icon-box"><i class="fa-brands fa-linkedin"></i></div>
+                  <div class="channel-content">
+                    <span class="channel-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/sreekanth-reddy-vennapusa/" target="_blank" rel="noopener noreferrer" class="channel-link">
+                      in/sreekanth-reddy-vennapusa &rarr;
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-channel-item">
+                  <div class="channel-icon-box"><i class="fa-brands fa-github"></i></div>
+                  <div class="channel-content">
+                    <span class="channel-label">GitHub</span>
+                    <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="channel-link">
+                      github.com/Sreekanth-RBG &rarr;
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-channel-item">
+                  <div class="channel-icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div class="channel-content">
+                    <span class="channel-label">Official Resume / CV</span>
+                    <div class="channel-value-row">
+                      <button class="channel-resume-btn" id="contactResumeModalBtn">
+                        <i class="fa-solid fa-eye"></i> Preview CV
+                      </button>
+                      <a href="assets/resume/Sreekanth_Reddy_Resume.pdf" download="Sreekanth_Reddy_Resume.pdf" class="channel-resume-dl">
+                        <i class="fa-solid fa-download"></i> Download PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Philosophy Card -->
+            <div class="quote-statement-card">
+              <div class="quote-mark">“</div>
+              <p class="quote-text">
+                Building software that understands low-level systems and security is far more powerful than building software that only understands frameworks.
+              </p>
+              <div class="quote-author">— Sreekanth Reddy Vennapusa</div>
+            </div>
+          </div>
+
+          <!-- Right: Realistic Yellow Notepad ("LEAVE A NOTE") -->
+          <div class="contact-right-col">
+            <div class="sticky-notepad-card">
+              <!-- Pushpin Element -->
+              <div class="notepad-pushpin"></div>
+              <div class="notepad-tape"></div>
+
+              <div class="notepad-header">
+                <span class="notepad-tag"><i class="fa-regular fa-comment-dots"></i> SAY HELLO</span>
+              </div>
+
+              <form class="notepad-form" id="portfolioContactForm">
+                <div class="notepad-input-group">
+                  <label for="contactName" class="sr-only">Your Name</label>
+                  <input type="text" id="contactName" class="notepad-line-input" placeholder="Your name / organization" required>
+                </div>
+
+                <div class="notepad-input-group">
+                  <label for="contactEmail" class="sr-only">Your Email</label>
+                  <input type="email" id="contactEmail" class="notepad-line-input" placeholder="your@email.com" required>
+                </div>
+
+                <div class="notepad-input-group">
+                  <label for="contactMessage" class="sr-only">Your Message</label>
+                  <textarea id="contactMessage" class="notepad-line-textarea" placeholder="What's on your mind? Opening scope, scheduling request..." required></textarea>
+                </div>
+
+                <div class="notepad-footer">
+                  <button type="submit" class="btn-notepad-send" aria-label="Send direct email inquiry">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Send Note</span>
+                  </button>
+                </div>
+
+                <div class="form-feedback" id="formFeedback"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- "LET'S DO THIS" Bottom Action Callout Bar -->
+        <div class="lets-do-this-banner">
+          <div class="lets-do-this-title">LET'S DO THIS</div>
+          <div class="lets-do-this-buttons">
+            <a href="https://www.linkedin.com/in/sreekanth-reddy-vennapusa" target="_blank" rel="noopener noreferrer" class="btn-action-pill">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn-action-pill">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:vsreekanthreddy1818@gmail.com" class="btn-action-pill primary">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Send Email</span>
+            </a>
+            <button class="btn-action-pill copy-btn btn-copy" data-copy-target="vsreekanthreddy1818@gmail.com" title="Copy Email">
+              <i class="fa-regular fa-clone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer with Live Views & Editorial Tagline -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom:0.5rem;">
+            <span class="brand-badge">SR</span>
+            <span>Sreekanth Reddy Vennapusa</span>
+          </div>
+          <p class="footer-tagline">Designing and engineering robust systems with intentionality, discipline, and purpose.</p>
+        </div>
+        <div class="footer-meta">
+          <strong>Third-Year B.Tech CSE Undergraduate</strong> • Lovely Professional University
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-credit">
+          <span class="live-dot"></span>
+          <span>Designed &amp; Engineered by <strong>Sreekanth Reddy</strong> • Site Views <span class="views-badge">14,820</span></span>
+        </div>
+        <a href="#hero" class="back-to-top-btn" title="Back to Top" aria-label="Back to Top">
+          <i class="fa-solid fa-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Bottom-Right "👋 Say Hi" Pill Button -->
+  <a href="#contact" class="floating-say-hi-btn" id="floatingSayHiBtn" aria-label="Jump to contact section">
+    <span>👋 Say Hi</span>
+  </a>
+
+  <!-- Floating Bottom-Left Back-to-Top Button -->
+  <button class="floating-back-top-btn" id="floatingBackTopBtn" aria-label="Scroll back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Interactive AI Assistant Modal ("Ask me anything" - yashahire style) -->
+  <div class="ai-modal-overlay" id="aiModal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+    <div class="ai-modal-card">
+      <div class="ai-modal-header">
+        <div class="ai-assistant-profile">
+          <img src="main.jpg" alt="Sreekanth Avatar" class="ai-avatar-img">
+          <div>
+            <h3 class="ai-modal-title" id="aiModalTitle">Sreekanth Reddy</h3>
+            <span class="ai-modal-subtitle">Interactive AI Portfolio Assistant</span>
+          </div>
+        </div>
+        <button class="ai-modal-close" id="aiModalCloseBtn" aria-label="Close AI modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="ai-chat-body" id="aiChatBody">
+        <!-- Initial AI Greeting Message -->
+        <div class="ai-msg bot">
+          <div class="ai-msg-bubble">
+            Hey, I'm Sreekanth's interactive assistant! 👋 Feel free to ask me anything about his projects, technical stack, CGPA, certifications, or how this site was engineered. What would you like to know?
+          </div>
+        </div>
+
+        <!-- Quick Interactive Prompt Suggestion Chips -->
+        <div class="ai-prompt-chips" id="aiPromptChips">
+          <button class="prompt-chip" data-question="projects">
+            <i class="fa-solid fa-folder-open"></i> What projects have you worked on?
+          </button>
+          <button class="prompt-chip" data-question="skills">
+            <i class="fa-solid fa-code"></i> Tell me about your technical skills.
+          </button>
+          <button class="prompt-chip" data-question="academics">
+            <i class="fa-solid fa-graduation-cap"></i> What is your current CGPA and year?
+          </button>
+          <button class="prompt-chip" data-question="certifications">
+            <i class="fa-solid fa-certificate"></i> What certifications do you hold?
+          </button>
+          <button class="prompt-chip" data-question="whyhire">
+            <i class="fa-solid fa-trophy"></i> Why should I hire Sreekanth?
+          </button>
+          <button class="prompt-chip" data-question="contact">
+            <i class="fa-regular fa-envelope"></i> How can I get in touch?
+          </button>
+        </div>
+      </div>
+
+      <div class="ai-input-bar">
+        <input type="text" id="aiUserInput" placeholder="Ask me anything..." class="ai-text-input">
+        <button id="aiSendBtn" class="ai-send-btn" aria-label="Send message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1: Project Technical Deep-Dive -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-subtitle">
+            <span id="modalStatusBadge"></span> • <span id="modalProjectPeriod"></span>
+          </span>
+          <h2 class="modal-title" id="modalProjectTitle">Project Title</h2>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close project modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <h3 class="modal-section-title"><i class="fa-solid fa-user-gear"></i> Engineering Role</h3>
+          <div class="modal-role-pill" id="modalProjectRole"></div>
+        </div>
+
+        <div>
+          <h3 class="modal-section-title"><i class="fa-solid fa-circle-exclamation"></i> Problem Statement</h3>
+          <p class="modal-text" id="modalProblemStatement"></p>
+        </div>
+
+        <div>
+          <h3 class="modal-section-title"><i class="fa-solid fa-code-fork"></i> Technologies &amp; Architecture</h3>
+          <div class="project-tech-stack" id="modalTechContainer" style="margin-bottom:0.75rem;"></div>
+          <p class="modal-text" id="modalArchitecture"></p>
+        </div>
+
+        <div>
+          <h3 class="modal-section-title amber"><i class="fa-solid fa-bullseye"></i> Real-World Impact</h3>
+          <p class="modal-text" id="modalRealWorldImpact"></p>
+        </div>
+
+        <div>
+          <h3 class="modal-section-title"><i class="fa-solid fa-key"></i> Key Engineering Takeaway</h3>
+          <p class="modal-text" id="modalEngineeringTakeaway"></p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://github.com/Sreekanth-RBG" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i class="fa-brands fa-github"></i>
+          <span>View Source on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Original Certification Credential Inspector & Visual Previewer -->
+  <div class="modal-overlay" id="certDetailModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="modal-card cert-modal-card" style="max-width:720px;">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-subtitle" id="certModalRank">Priority #01</span>
+          <h2 class="modal-title" id="certModalTitle" style="font-size:1.35rem;">Credential Inspector</h2>
+        </div>
+        <button class="modal-close-btn" id="certModalCloseBtn" aria-label="Close certification modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Real Document Visual Preview Box (Image or PDF Viewer) -->
+      <div class="cert-modal-visual-box" id="certModalVisualBox">
+        <div class="cert-visual-content" id="certModalVisualContent"></div>
+      </div>
+
+      <div class="modal-body" style="gap:1.1rem; padding-top:0.75rem;">
+        <div class="dossier-row">
+          <span class="dossier-label">Issuing Organization</span>
+          <span class="dossier-value" id="certModalIssuer" style="color:var(--crimson-500);font-weight:700;"></span>
+        </div>
+
+        <div class="dossier-row">
+          <span class="dossier-label">Issue Date</span>
+          <span class="dossier-value" id="certModalDate"></span>
+        </div>
+
+        <div class="dossier-row">
+          <span class="dossier-label">Awarded To</span>
+          <span class="dossier-value" style="font-weight:600;color:var(--text-primary);">Sreekanth Reddy Vennapusa (Reg #12409277)</span>
+        </div>
+
+        <div class="dossier-row">
+          <span class="dossier-label">Verification Status</span>
+          <span class="dossier-value" id="certModalStatus" style="color:#1A7F37;font-weight:600;">
+            <i class="fa-solid fa-circle-check"></i> <span id="certModalStatusText">Verified Credential</span>
+          </span>
+        </div>
+
+        <div class="dossier-row">
+          <span class="dossier-label">Verification / Credential ID</span>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+            <span class="dossier-value" id="certModalId" style="font-family:var(--font-mono);font-size:0.875rem;background:var(--cyan-subtle);padding:0.25rem 0.5rem;border-radius:4px;border:1px solid var(--cyan-border);color:var(--cyan-400);"></span>
+            <button class="btn btn-secondary btn-sm" id="copyCertIdBtn" style="padding:0.25rem 0.6rem;font-size:0.75rem;" title="Copy Credential ID">
+              <i class="fa-regular fa-copy"></i> <span>Copy ID</span>
+            </button>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="certVerifyExternalLink" style="padding:0.25rem 0.6rem;font-size:0.75rem;display:none;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Verify Online</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="dossier-row">
+          <span class="dossier-label">Curriculum / Scope</span>
+          <p class="modal-text" id="certModalDescription" style="margin-top:0.25rem;line-height:1.6;"></p>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+          <a href="#" download id="certModalDownloadBtn" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-download"></i>
+            <span>Download Original Certificate</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" id="certModalOpenBtn" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in New Tab</span>
+          </a>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="certCloseFooterBtn">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Original Resume / CV Interactive Previewer & Downloader -->
+  <div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+    <div class="modal-card resume-modal-card" style="max-width:860px;width:95vw;">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-subtitle">Original Academic &amp; Professional Record</span>
+          <h2 class="modal-title" id="resumeModalTitle">Curriculum Vitae — Sreekanth Reddy Vennapusa</h2>
+        </div>
+        <button class="modal-close-btn" id="resumeModalCloseBtn" aria-label="Close resume modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="resume-modal-toolbar">
+        <div class="resume-info-chips">
+          <span class="resume-chip"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE (CGPA: 7.62)</span>
+          <span class="resume-chip"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</span>
+          <span class="resume-chip"><i class="fa-solid fa-certificate"></i> CompTIA Network+</span>
+          <span class="resume-chip"><i class="fa-solid fa-code"></i> C++ / Python / Low-Level</span>
+        </div>
+        <div class="resume-action-buttons">
+          <a href="assets/resume/Sreekanth_Reddy_Resume.pdf" download="Sreekanth_Reddy_Resume.pdf" class="btn btn-primary btn-sm" id="downloadResumeModalBtn">
+            <i class="fa-solid fa-download"></i>
+            <span>Download PDF</span>
+          </a>
+          <a href="assets/resume/Sreekanth_Reddy_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in New Tab</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="resume-preview-container">
+        <iframe src="assets/resume/Sreekanth_Reddy_Resume.pdf#toolbar=1" class="resume-pdf-frame" title="Sreekanth Reddy Vennapusa Resume PDF Preview"></iframe>
+      </div>
+
+      <div class="modal-footer" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+        <span style="font-size:0.8125rem;color:var(--text-muted);">
+          <i class="fa-solid fa-circle-check" style="color:#1A7F37;"></i> Authentic document issued to Sreekanth Reddy Vennapusa (Registration: 12409277)
+        </span>
+        <button class="btn btn-secondary btn-sm" id="resumeCloseFooterBtn">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js 3D WebGL Library for Background Keycap Grid -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
